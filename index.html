@@ -91,13 +91,184 @@ body{margin:0;min-height:100vh;font-family:"Cormorant Garamond",Georgia,serif;fo
 
     <p>I don’t have a perfect promise to make, but I have a true one: I will choose you. On the easy days, on the hard days, and on the days when we are both tired. I will listen, I will grow, and I will keep making you smile for as long as you’ll let me.</p>
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Letter for Mami</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;700&family=Pinyon+Script&display=swap">
+<style>
+:root{
+  --bg1:#fff1ee;--bg2:#f7c9d3;--ink:#4a1830;--soft:#8a4a62;--accent:#c8325a;
+  --paper:#fffaf3;--paper-ink:#3b1d2c;--rule:rgba(185,138,62,.25);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg1:#240a18;--bg2:#4a1230;--ink:#ffe9ee;--soft:#e6b3c3;--accent:#ff7d9c}}
+:root[data-theme="dark"]{--bg1:#240a18;--bg2:#4a1230;--ink:#ffe9ee;--soft:#e6b3c3;--accent:#ff7d9c}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"Cormorant Garamond",Georgia,serif;font-size:20px;color:var(--ink);overflow-x:hidden;
+  background:radial-gradient(1000px 600px at 85% -10%,var(--bg2),transparent 60%),radial-gradient(800px 500px at -10% 110%,var(--bg2),transparent 60%),var(--bg1);background-color:var(--bg1)}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.p{position:absolute;top:-40px;color:var(--accent);opacity:.45;animation:fall linear infinite}
+@keyframes fall{to{transform:translate3d(var(--dx),110vh,0) rotate(360deg)}}
+.burst{position:absolute;color:var(--accent);animation:up 1.6s ease-out forwards;font-size:26px}
+@keyframes up{to{transform:translate(var(--bx),var(--by)) scale(1.6);opacity:0}}
+
+/* intro */
+#intro{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 20px;transition:opacity .8s,transform .8s}
+#intro.gone{opacity:0;transform:translateY(-30px);pointer-events:none;position:absolute;inset:0}
+#intro h1{font-family:"Pinyon Script",cursive;font-weight:400;font-size:clamp(34px,9vw,56px);color:var(--accent);margin:0 0 6px}
+#intro p{font-style:italic;color:var(--soft);margin:0 0 36px;font-size:1.2rem}
+.env{position:relative;width:min(340px,84vw);height:224px;background:#f1d2ae;border-radius:6px;cursor:pointer;border:0;padding:0;
+  box-shadow:0 26px 50px -14px rgba(74,24,48,.55);animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.env::before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(155deg,transparent 49.5%,rgba(0,0,0,.09) 50%) left/50% 100% no-repeat,linear-gradient(205deg,transparent 49.5%,rgba(0,0,0,.09) 50%) right/50% 100% no-repeat}
+.flap{position:absolute;left:0;top:0;width:100%;height:118px;background:#e6bf8f;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s}
+.to{position:absolute;left:0;right:0;bottom:30px;font-family:"Pinyon Script",cursive;font-size:2rem;color:#7a3a4e}
+.wax{position:absolute;left:50%;top:96px;width:56px;height:56px;margin-left:-28px;border-radius:50%;z-index:2;display:grid;place-items:center;color:#fff;font-size:24px;
+  background:radial-gradient(circle at 35% 30%,#e8537a,#8d1535);box-shadow:0 5px 12px rgba(0,0,0,.4);animation:pulse 1.6s infinite;transition:.5s}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.env.open{animation:none}.env.open .flap{transform:rotateX(180deg)}.env.open .wax{opacity:0;transform:scale(.2)}
+.tap{margin-top:34px;color:var(--soft);font-style:italic}
+
+/* letter */
+#letter{position:relative;z-index:2;display:none;max-width:720px;margin:0 auto;padding:50px 16px 90px}
+#letter.on{display:block}
+.sheet{position:relative;background:var(--paper);color:var(--paper-ink);border-radius:6px;padding:44px clamp(22px,7vw,64px) 48px;
+  box-shadow:0 30px 70px -20px rgba(74,24,48,.5);transform:rotate(-.4deg);animation:unfold 1.2s cubic-bezier(.2,.8,.2,1) both;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 33px,var(--rule) 33px 34px);background-position:0 12px}
+.sheet::before{content:"";position:absolute;left:clamp(10px,3.5vw,34px);top:0;bottom:0;width:1px;background:rgba(200,50,90,.3)}
+@keyframes unfold{from{opacity:0;transform:translateY(80px) rotate(2deg) scale(.96)}}
+.hello{font-family:"Pinyon Script",cursive;font-size:clamp(46px,12vw,72px);line-height:1.1;color:var(--accent);margin:0 0 18px;min-height:1.2em}
+.hello::after{content:"|";opacity:.6;animation:blink 1s steps(1) infinite}
+.hello.done::after{content:""}
+@keyframes blink{50%{opacity:0}}
+.sheet p{margin:0 0 34px;line-height:34px;font-size:1.28rem;opacity:0;transform:translateY(18px);filter:blur(3px);transition:opacity 1s,transform 1s,filter 1s}
+.sheet p.in{opacity:1;transform:none;filter:none}
+.sheet .big{font-family:"Caveat",cursive;font-size:1.95rem;font-weight:700;color:var(--accent);line-height:40px}
+.sheet em{color:var(--accent);font-style:italic}
+.sign{font-family:"Pinyon Script",cursive;font-size:2.6rem;line-height:1.2!important;color:var(--accent);text-align:right}
+.ps{font-style:italic;color:#7a4a5c;font-size:1.1rem!important}
+.heartbtn{display:block;margin:34px auto 0;font:inherit;font-size:1.15rem;font-weight:600;color:#fff;border:0;border-radius:999px;padding:14px 32px;cursor:pointer;
+  background:radial-gradient(circle at 35% 30%,#e8537a,#a81d44);box-shadow:0 10px 24px -8px rgba(168,29,68,.7);transition:.2s}
+.heartbtn:hover{transform:scale(1.05)}.heartbtn:active{transform:scale(.96)}
+.again{display:block;margin:18px auto 0;background:none;border:0;font:inherit;font-style:italic;color:var(--soft);cursor:pointer;text-decoration:underline}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.sheet p{opacity:1;transform:none;filter:none}}
+</style>
+</head>
+<body>
+<div id="fx" aria-hidden="true"></div>
+
+<section id="intro">
+  <h1>For Mami</h1>
+  <p>Words I have carried for a while, written for you.</p>
+  <button class="env" id="env" aria-label="Open the letter">
+    <div class="flap"></div><div class="to">Mami</div><div class="wax">♥</div>
+  </button>
+  <div class="tap">Tap the envelope to open</div>
+</section>
+
+<main id="letter">
+  <article class="sheet">
+    <h2 class="hello" id="hello" aria-label="Dear Mami,"></h2>
+
+    <p>Some feelings are too steady to be loud, and what I feel for you is one of them. I wanted to put it into words properly: not in a rush, not for an occasion, but simply because you deserve to hear it plainly.</p>
+
+    <p>Loving you has changed the way I carry myself. I am calmer, more patient, and more honest about what I want from my life, and you are the reason. You never asked me to become a better person. You simply made me want to be one.</p>
+
+    <p class="big">Love, I have learned, is less a feeling than a decision, and I make it gladly, every day, with you.</p>
+
+    <p>What I admire most about you is not what is easy to see. It is your strength in quiet moments, the grace with which you meet what is difficult, and the way you stay kind even when kindness costs you something. I notice it all, Mami, and I am more grateful than I know how to say.</p>
+
+    <p>I won’t pretend that we are perfect, or that the road ahead will be free of difficulty. There will be seasons of doubt and weariness. But I would rather walk through every one of them with you than enjoy any easy season without you. I promise to listen before I defend myself, to apologise when I am wrong, and to keep choosing <em>us</em> on the days when it would be simpler not to.</p>
+
+    <p>When I imagine the years ahead, I don’t picture anything extravagant. I picture an unhurried morning, your hand in mine, and the quiet certainty that I am exactly where I am meant to be.</p>
+
+    <p class="big">You are not only the one I love. You are the one I think that we can build a feature, and the one I want beside me for life.</p>
+
+    <p class="sign">With all my love,<br>Yours, always</p>
+
+    <p class="ps">P.S. Whatever tomorrow brings, know this: you are cherished, you are enough, and you are never alone.</p>
+
+    <button class="heartbtn" id="love">With all my heart ♥</button>
+    <button class="again" id="again">Read it again</button>
+  </article>
+</main>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var fx=$('fx'),reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // falling petals and hearts
+  if(!reduce){
+    var sym=['♥','❀','♡','✿'];
+    for(var i=0;i<18;i++){
+      var s=document.createElement('span');s.className='p';s.textContent=sym[i%4];
+      s.style.left=Math.random()*100+'%';s.style.fontSize=(12+Math.random()*20)+'px';
+      s.style.animationDuration=(11+Math.random()*14)+'s';s.style.animationDelay=(-Math.random()*20)+'s';
+      s.style.setProperty('--dx',(Math.random()*140-70)+'px');fx.appendChild(s);
+    }
+  }
+
+  // burst of hearts from a point
+  function burst(x,y,n){
+    if(reduce)return;
+    for(var i=0;i<n;i++){
+      var h=document.createElement('span');h.className='burst';h.textContent=['♥','♡','❤'][i%3];
+      h.style.left=x+'px';h.style.top=y+'px';
+      var a=Math.random()*Math.PI*2,d=70+Math.random()*150;
+      h.style.setProperty('--bx',Math.cos(a)*d+'px');h.style.setProperty('--by',(Math.sin(a)*d-60)+'px');
+      fx.appendChild(h);setTimeout(function(el){el.remove()}.bind(null,h),1700);
+    }
+  }
+
+  // typewriter greeting
+  function type(el,text,cb){
+    el.classList.remove('done');el.textContent='';
+    if(reduce){el.textContent=text;el.classList.add('done');cb&&cb();return}
+    var i=0;(function step(){
+      el.textContent=text.slice(0,++i);
+      if(i<text.length)setTimeout(step,120);else{el.classList.add('done');cb&&cb()}
+    })();
+  }
+
+  // reveal paragraphs as they scroll in
+  var paras=document.querySelectorAll('.sheet p'),io=null;
+  function watch(){
+    paras.forEach(function(p){p.classList.remove('in')});
+    if(io)io.disconnect();
+    io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.35});
+    paras.forEach(function(p){io.observe(p)});
+  }
+
+  function play(){window.scrollTo(0,0);type($('hello'),'Dear Mami,',watch)}
+
+  // open envelope
+  var env=$('env');
+  env.onclick=function(e){
+    if(env.classList.contains('open'))return;
+    env.classList.add('open');
+    var r=env.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,14);
+    setTimeout(function(){$('intro').classList.add('gone');$('letter').classList.add('on');play()},reduce?0:1000);
+  };
+
+  $('love').onclick=function(e){burst(e.clientX,e.clientY,22)};
+  $('again').onclick=play;
+})();
+</script>
+</body>
+</html>
+
     <p>When I think about the future, I don’t see a grand picture. I see you beside me, laughing at something small. And that is more than enough for me. It is everything.</p>
 
-    <p class="big">Mami, you are the best thing that ever happened to me.</p>
+    <p class="big">You are not only the one I love. You are the one I trust, and the one I want beside me for life.</p>
 
     <p class="sign">Forever yours,<br>Your love ♥</p>
 
-    <p class="ps">P.S. If you’re smiling right now, I did my job. Tap below, and let me send you a little more love.</p>
+    <p class="ps">P.S. Whatever tomorrow brings, know this: you are cherished, you are enough, and you are never alone.</p>
 
     <button class="heartbtn" id="love">    <a href="https://wa.me/31668196">Send me message ♥</a></button>
     <button class="again" id="again">Read it again</button>
